@@ -22,8 +22,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb992ba9-ff27-4d20-a37a-69afbbec963e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.cargo/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/.cargo/config.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/vga_buffer.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +35,13 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Rust File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -106,7 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1601733683415</updated>
       <workItem from="1601733685043" duration="4024000" />
-      <workItem from="1602351593013" duration="2786000" />
+      <workItem from="1602351593013" duration="4423000" />
     </task>
     <task id="LOCAL-00001" summary="It works!">
       <created>1602353932271</created>
@@ -115,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602353932271</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Now with cargo run">
+      <created>1602354630536</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602354630536</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,7 +151,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="It works!" />
-    <option name="LAST_COMMIT_MESSAGE" value="It works!" />
+    <MESSAGE value="Now with cargo run" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now with cargo run" />
   </component>
   <component name="WindowStateProjectService">
     <state x="238" y="118" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602354382959">
@@ -145,22 +163,22 @@
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="464" y="264" width="662" height="406" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1601733760845" />
-    <state width="1354" height="203" key="GridCell.Tab.0.bottom" timestamp="1602354361983">
+    <state width="1354" height="203" key="GridCell.Tab.0.bottom" timestamp="1602355973361">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state width="1354" height="203" key="GridCell.Tab.0.bottom/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602354361983" />
-    <state width="1354" height="203" key="GridCell.Tab.0.center" timestamp="1602354361983">
+    <state width="1354" height="203" key="GridCell.Tab.0.bottom/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602355973361" />
+    <state width="1354" height="203" key="GridCell.Tab.0.center" timestamp="1602355973361">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state width="1354" height="203" key="GridCell.Tab.0.center/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602354361983" />
-    <state width="1354" height="203" key="GridCell.Tab.0.left" timestamp="1602354361983">
+    <state width="1354" height="203" key="GridCell.Tab.0.center/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602355973361" />
+    <state width="1354" height="203" key="GridCell.Tab.0.left" timestamp="1602355973360">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state width="1354" height="203" key="GridCell.Tab.0.left/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602354361983" />
-    <state width="1354" height="203" key="GridCell.Tab.0.right" timestamp="1602354361983">
+    <state width="1354" height="203" key="GridCell.Tab.0.left/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602355973360" />
+    <state width="1354" height="203" key="GridCell.Tab.0.right" timestamp="1602355973361">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state width="1354" height="203" key="GridCell.Tab.0.right/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602354361983" />
+    <state width="1354" height="203" key="GridCell.Tab.0.right/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602355973361" />
     <state x="289" y="98" width="1022" height="737" key="SettingsEditor" timestamp="1602351630449">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
