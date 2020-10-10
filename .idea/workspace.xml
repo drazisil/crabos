@@ -22,8 +22,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb992ba9-ff27-4d20-a37a-69afbbec963e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.cargo/config.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/x86_crab_os.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.cargo/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/.cargo/config.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,22 +52,10 @@
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Cargo.build">
+  <component name="RunManager" selected="Cargo.run">
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
-      <option name="channel" value="DEFAULT" />
-      <option name="command" value="run --package crabos --bin crabos" />
-      <option name="allFeatures" value="false" />
-      <option name="emulateTerminal" value="false" />
-      <option name="backtrace" value="SHORT" />
-      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
-      <envs />
-      <method v="2">
-        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
     <configuration name="build" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
@@ -82,12 +70,25 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration name="run" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="run --target x86_crab_os.json" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Cargo.Run" />
       <item itemvalue="Cargo.build" />
+      <item itemvalue="Cargo.run" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.run" />
         <item itemvalue="Cargo.build" />
       </list>
     </recent_temporary>
@@ -105,8 +106,16 @@
       <option name="presentableId" value="Default" />
       <updated>1601733683415</updated>
       <workItem from="1601733685043" duration="4024000" />
-      <workItem from="1602351593013" duration="1999000" />
+      <workItem from="1602351593013" duration="2786000" />
     </task>
+    <task id="LOCAL-00001" summary="It works!">
+      <created>1602353932271</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602353932271</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,34 +132,42 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="It works!" />
+    <option name="LAST_COMMIT_MESSAGE" value="It works!" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="238" y="118" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602353595714">
+    <state x="238" y="118" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602354382959">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state x="238" y="118" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602353595713" />
+    <state x="238" y="118" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602354382959" />
     <state x="464" y="264" width="662" height="406" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601733760845">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="464" y="264" width="662" height="406" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1601733760845" />
-    <state width="1354" height="203" key="GridCell.Tab.0.bottom" timestamp="1602353358129">
+    <state width="1354" height="203" key="GridCell.Tab.0.bottom" timestamp="1602354361983">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state width="1354" height="203" key="GridCell.Tab.0.bottom/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602353358129" />
-    <state width="1354" height="203" key="GridCell.Tab.0.center" timestamp="1602353358128">
+    <state width="1354" height="203" key="GridCell.Tab.0.bottom/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602354361983" />
+    <state width="1354" height="203" key="GridCell.Tab.0.center" timestamp="1602354361983">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state width="1354" height="203" key="GridCell.Tab.0.center/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602353358128" />
-    <state width="1354" height="203" key="GridCell.Tab.0.left" timestamp="1602353358128">
+    <state width="1354" height="203" key="GridCell.Tab.0.center/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602354361983" />
+    <state width="1354" height="203" key="GridCell.Tab.0.left" timestamp="1602354361983">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state width="1354" height="203" key="GridCell.Tab.0.left/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602353358128" />
-    <state width="1354" height="203" key="GridCell.Tab.0.right" timestamp="1602353358129">
+    <state width="1354" height="203" key="GridCell.Tab.0.left/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602354361983" />
+    <state width="1354" height="203" key="GridCell.Tab.0.right" timestamp="1602354361983">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state width="1354" height="203" key="GridCell.Tab.0.right/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602353358129" />
+    <state width="1354" height="203" key="GridCell.Tab.0.right/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602354361983" />
     <state x="289" y="98" width="1022" height="737" key="SettingsEditor" timestamp="1602351630449">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="289" y="98" width="1022" height="737" key="SettingsEditor/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602351630449" />
+    <state x="395" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1602353938503">
+      <screen x="0" y="27" width="1600" height="873" />
+    </state>
+    <state x="395" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602353938503" />
   </component>
 </project>
