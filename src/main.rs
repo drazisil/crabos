@@ -33,7 +33,5 @@ pub extern "C" fn _start() -> ! {
 
 #[test_case]
 fn trivial_assertion() {
-    crabos::serial_print!("trivial assertion... ");
     assert_eq!(1, 1);
-    crabos::serial_println!("[ok]");
 }
