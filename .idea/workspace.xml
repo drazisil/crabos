@@ -162,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602420466001</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Change branch name to main">
+      <created>1602422308990</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1602422308990</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,7 +195,8 @@
     <MESSAGE value="tests are also good." />
     <MESSAGE value="Use lib test runner" />
     <MESSAGE value="Add test and cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add test and cleanup" />
+    <MESSAGE value="Change branch name to main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change branch name to main" />
   </component>
   <component name="WindowStateProjectService">
     <state x="238" y="118" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602382888839">
@@ -219,10 +227,14 @@
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="289" y="98" width="1022" height="737" key="SettingsEditor/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602351630449" />
-    <state x="395" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1602420468321">
+    <state x="395" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1602422326714">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state x="395" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602420468321" />
+    <state x="395" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602422326714" />
+    <state x="596" y="362" width="397" height="210" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1602422343766">
+      <screen x="0" y="27" width="1600" height="873" />
+    </state>
+    <state x="596" y="362" width="397" height="210" key="git4idea.remote.GitConfigureRemotesDialog/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602422343766" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/crabos$Tests_in__tests_.info" NAME="Tests in 'tests' Coverage Results" MODIFIED="1602421556789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="RsCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" CONTEXT_FILE_PATH="$PROJECT_DIR$" />
