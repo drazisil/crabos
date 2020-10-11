@@ -62,3 +62,10 @@ use core::panic::PanicInfo;
 fn panic(info: &PanicInfo) -> ! {
     test_panic_handler(info)
 }
+
+#[cfg(test)]
+#[no_mangle]
+pub extern "C" fn _start() -> ! {
+    test_main();
+    loop {}
+}

@@ -22,9 +22,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb992ba9-ff27-4d20-a37a-69afbbec963e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/basic_boot.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/crabos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/crabos.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
@@ -140,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602356320195</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="main works with lib">
+      <created>1602417622787</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602417622787</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +166,8 @@
     <MESSAGE value="It works!" />
     <MESSAGE value="Now with cargo run" />
     <MESSAGE value="vga" />
-    <option name="LAST_COMMIT_MESSAGE" value="vga" />
+    <MESSAGE value="main works with lib" />
+    <option name="LAST_COMMIT_MESSAGE" value="main works with lib" />
   </component>
   <component name="WindowStateProjectService">
     <state x="238" y="118" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602382888839">
@@ -173,22 +178,22 @@
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="464" y="264" width="662" height="406" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1601733760845" />
-    <state width="1354" height="203" key="GridCell.Tab.0.bottom" timestamp="1602417579588">
+    <state width="1354" height="203" key="GridCell.Tab.0.bottom" timestamp="1602418418082">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state width="1354" height="203" key="GridCell.Tab.0.bottom/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602417579588" />
-    <state width="1354" height="203" key="GridCell.Tab.0.center" timestamp="1602417579587">
+    <state width="1354" height="203" key="GridCell.Tab.0.bottom/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602418418082" />
+    <state width="1354" height="203" key="GridCell.Tab.0.center" timestamp="1602418418082">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state width="1354" height="203" key="GridCell.Tab.0.center/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602417579587" />
-    <state width="1354" height="203" key="GridCell.Tab.0.left" timestamp="1602417579587">
+    <state width="1354" height="203" key="GridCell.Tab.0.center/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602418418082" />
+    <state width="1354" height="203" key="GridCell.Tab.0.left" timestamp="1602418418082">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state width="1354" height="203" key="GridCell.Tab.0.left/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602417579587" />
-    <state width="1354" height="203" key="GridCell.Tab.0.right" timestamp="1602417579587">
+    <state width="1354" height="203" key="GridCell.Tab.0.left/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602418418082" />
+    <state width="1354" height="203" key="GridCell.Tab.0.right" timestamp="1602418418082">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state width="1354" height="203" key="GridCell.Tab.0.right/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602417579587" />
+    <state width="1354" height="203" key="GridCell.Tab.0.right/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602418418082" />
     <state x="289" y="98" width="1022" height="737" key="SettingsEditor" timestamp="1602351630449">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
