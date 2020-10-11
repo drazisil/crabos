@@ -21,10 +21,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb992ba9-ff27-4d20-a37a-69afbbec963e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/should_panic.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="eb992ba9-ff27-4d20-a37a-69afbbec963e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -226,5 +223,8 @@
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="395" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602420468321" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/crabos$Tests_in__tests_.info" NAME="Tests in 'tests' Coverage Results" MODIFIED="1602421556789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="RsCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" CONTEXT_FILE_PATH="$PROJECT_DIR$" />
   </component>
 </project>
