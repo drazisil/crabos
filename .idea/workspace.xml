@@ -23,6 +23,12 @@
   <component name="ChangeListManager">
     <list default="true" id="eb992ba9-ff27-4d20-a37a-69afbbec963e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serial.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vga_buffer.rs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +72,11 @@
         </map>
       </branch-storage>
     </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MacroExpansionManager">
@@ -84,7 +95,7 @@
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Cargo.run">
+  <component name="RunManager" selected="Cargo.build">
     <configuration name="build" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="channel" value="DEFAULT" />
       <option name="command" value="build" />
@@ -109,14 +120,19 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Cargo.build" />
       <item itemvalue="Cargo.run" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Cargo.run" />
         <item itemvalue="Cargo.build" />
+        <item itemvalue="Cargo.run" />
       </list>
     </recent_temporary>
   </component>
@@ -137,6 +153,7 @@
       <workItem from="1602380624239" duration="2908000" />
       <workItem from="1602441412089" duration="599000" />
       <workItem from="1603555456135" duration="27000" />
+      <workItem from="1603555494758" duration="895000" />
     </task>
     <task id="LOCAL-00001" summary="It works!">
       <created>1602353932271</created>
@@ -201,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602422767003</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Update">
+      <created>1603555731608</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1603555731608</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,41 +252,48 @@
     <MESSAGE value="Use lib test runner" />
     <MESSAGE value="Add test and cleanup" />
     <MESSAGE value="Change branch name to main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change branch name to main" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="238" y="118" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602382888839">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state x="286" y="137" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603556001847">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="238" y="118" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602382888839" />
+    <state x="286" y="137" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1603556001847" />
     <state x="464" y="264" width="662" height="406" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601733760845">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="464" y="264" width="662" height="406" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1601733760845" />
-    <state width="1354" height="203" key="GridCell.Tab.0.bottom" timestamp="1602441344183">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state width="773" height="258" key="GridCell.Tab.0.bottom" timestamp="1603556336837">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1354" height="203" key="GridCell.Tab.0.bottom/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602441344183" />
-    <state width="1354" height="203" key="GridCell.Tab.0.center" timestamp="1602441344183">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state width="773" height="258" key="GridCell.Tab.0.bottom/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1603556336837" />
+    <state width="773" height="258" key="GridCell.Tab.0.center" timestamp="1603556336837">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1354" height="203" key="GridCell.Tab.0.center/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602441344183" />
-    <state width="1354" height="203" key="GridCell.Tab.0.left" timestamp="1602441344183">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state width="773" height="258" key="GridCell.Tab.0.center/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1603556336837" />
+    <state width="773" height="258" key="GridCell.Tab.0.left" timestamp="1603556336837">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1354" height="203" key="GridCell.Tab.0.left/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602441344183" />
-    <state width="1354" height="203" key="GridCell.Tab.0.right" timestamp="1602441344183">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state width="773" height="258" key="GridCell.Tab.0.left/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1603556336837" />
+    <state width="773" height="258" key="GridCell.Tab.0.right" timestamp="1603556336837">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="1354" height="203" key="GridCell.Tab.0.right/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602441344183" />
+    <state width="773" height="258" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1603556336837" />
     <state x="289" y="98" width="1022" height="737" key="SettingsEditor" timestamp="1602351630449">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="289" y="98" width="1022" height="737" key="SettingsEditor/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602351630449" />
-    <state x="395" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1602422771477">
-      <screen x="0" y="27" width="1600" height="873" />
+    <state x="474" y="234" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1603555734383">
+      <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="395" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602422771477" />
+    <state x="474" y="234" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1603555734383" />
     <state x="596" y="362" width="397" height="210" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1602422613772">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
