@@ -21,7 +21,9 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb992ba9-ff27-4d20-a37a-69afbbec963e" name="Default Changelist" comment="" />
+    <list default="true" id="eb992ba9-ff27-4d20-a37a-69afbbec963e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +40,32 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MacroExpansionManager">
@@ -81,11 +109,6 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Cargo.build" />
       <item itemvalue="Cargo.run" />
@@ -112,6 +135,8 @@
       <workItem from="1601733685043" duration="4024000" />
       <workItem from="1602351593013" duration="4732000" />
       <workItem from="1602380624239" duration="2908000" />
+      <workItem from="1602441412089" duration="599000" />
+      <workItem from="1603555456135" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="It works!">
       <created>1602353932271</created>
@@ -169,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602422308990</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Change branch name to main">
+      <created>1602422767003</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1602422767003</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,34 +239,34 @@
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="464" y="264" width="662" height="406" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1601733760845" />
-    <state width="1354" height="203" key="GridCell.Tab.0.bottom" timestamp="1602420286816">
+    <state width="1354" height="203" key="GridCell.Tab.0.bottom" timestamp="1602441344183">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state width="1354" height="203" key="GridCell.Tab.0.bottom/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602420286816" />
-    <state width="1354" height="203" key="GridCell.Tab.0.center" timestamp="1602420286815">
+    <state width="1354" height="203" key="GridCell.Tab.0.bottom/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602441344183" />
+    <state width="1354" height="203" key="GridCell.Tab.0.center" timestamp="1602441344183">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state width="1354" height="203" key="GridCell.Tab.0.center/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602420286815" />
-    <state width="1354" height="203" key="GridCell.Tab.0.left" timestamp="1602420286815">
+    <state width="1354" height="203" key="GridCell.Tab.0.center/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602441344183" />
+    <state width="1354" height="203" key="GridCell.Tab.0.left" timestamp="1602441344183">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state width="1354" height="203" key="GridCell.Tab.0.left/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602420286815" />
-    <state width="1354" height="203" key="GridCell.Tab.0.right" timestamp="1602420286816">
+    <state width="1354" height="203" key="GridCell.Tab.0.left/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602441344183" />
+    <state width="1354" height="203" key="GridCell.Tab.0.right" timestamp="1602441344183">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state width="1354" height="203" key="GridCell.Tab.0.right/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602420286816" />
+    <state width="1354" height="203" key="GridCell.Tab.0.right/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602441344183" />
     <state x="289" y="98" width="1022" height="737" key="SettingsEditor" timestamp="1602351630449">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="289" y="98" width="1022" height="737" key="SettingsEditor/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602351630449" />
-    <state x="395" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1602422326714">
+    <state x="395" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1602422771477">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state x="395" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602422326714" />
-    <state x="596" y="362" width="397" height="210" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1602422343766">
+    <state x="395" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602422771477" />
+    <state x="596" y="362" width="397" height="210" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1602422613772">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
-    <state x="596" y="362" width="397" height="210" key="git4idea.remote.GitConfigureRemotesDialog/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602422343766" />
+    <state x="596" y="362" width="397" height="210" key="git4idea.remote.GitConfigureRemotesDialog/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602422613772" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/crabos$Tests_in__tests_.info" NAME="Tests in 'tests' Coverage Results" MODIFIED="1602421556789" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="RsCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" CONTEXT_FILE_PATH="$PROJECT_DIR$" />
