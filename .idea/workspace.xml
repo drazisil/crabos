@@ -22,10 +22,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb992ba9-ff27-4d20-a37a-69afbbec963e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/arch/x86_64/long_mode_init.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/arch/x86_64/boot.asm" beforeDir="false" afterPath="$PROJECT_DIR$/src/arch/x86_64/boot.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arch/x86_64/linker.ld" beforeDir="false" afterPath="$PROJECT_DIR$/src/arch/x86_64/linker.ld" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arch/x86_64/long_mode_init.asm" beforeDir="false" afterPath="$PROJECT_DIR$/src/arch/x86_64/long_mode_init.asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x86_crab_os.json" beforeDir="false" afterPath="$PROJECT_DIR$/x86_64-crabos.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +177,7 @@
       <workItem from="1602380624239" duration="2908000" />
       <workItem from="1602441412089" duration="599000" />
       <workItem from="1603555456135" duration="27000" />
-      <workItem from="1603555494758" duration="13723000" />
+      <workItem from="1603555494758" duration="15222000" />
     </task>
     <task id="LOCAL-00001" summary="It works!">
       <created>1602353932271</created>
@@ -267,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603593891033</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="End of post 2!">
+      <created>1603595807880</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1603595807880</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +307,8 @@
     <MESSAGE value="Update" />
     <MESSAGE value="A new hope" />
     <MESSAGE value="It's the end of the world as we know it" />
-    <option name="LAST_COMMIT_MESSAGE" value="It's the end of the world as we know it" />
+    <MESSAGE value="End of post 2!" />
+    <option name="LAST_COMMIT_MESSAGE" value="End of post 2!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="286" y="137" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603556001847">
@@ -338,11 +349,11 @@
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="289" y="98" width="1022" height="737" key="SettingsEditor/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602351630449" />
-    <state x="474" y="234" width="800" height="564" key="Vcs.Push.Dialog.v2" timestamp="1603593895918">
+    <state x="474" y="234" width="800" height="564" key="Vcs.Push.Dialog.v2" timestamp="1603595809340">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="395" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602422771477" />
-    <state x="474" y="234" width="800" height="564" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1603593895918" />
+    <state x="474" y="234" width="800" height="564" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1603595809340" />
     <state x="596" y="362" width="397" height="210" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1602422613772">
       <screen x="0" y="27" width="1600" height="873" />
     </state>

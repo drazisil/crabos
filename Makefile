@@ -1,6 +1,8 @@
 arch ?= x86_64
 kernel := build/kernel-$(arch).bin
 iso := build/os-$(arch).iso
+target ?= $(arch)-crabos
+crabos := target/$(target)/debug/libcrabos.a
 
 linker_script := src/arch/$(arch)/linker.ld
 grub_cfg := src/arch/$(arch)/grub.cfg
@@ -8,7 +10,7 @@ assembly_source_files := $(wildcard src/arch/$(arch)/*.asm)
 assembly_object_files := $(patsubst src/arch/$(arch)/%.asm, \
 	build/arch/$(arch)/%.o, $(assembly_source_files))
 
-.PHONY: all clean run iso moo
+.PHONY: all clean run iso moo kernel
 
 all: $(kernel)
 
@@ -27,10 +29,14 @@ $(iso): $(kernel) $(grub_cfg)
 	@grub-mkrescue -o $(iso) build/isofiles
 	@rm -r build/isofiles
 
-$(kernel): $(assembly_object_files) $(linker_script)
-	@ld -n -T $(linker_script) -o $(kernel) $(assembly_object_files)
+$(kernel): kernel $(crabos) $(assembly_object_files) $(linker_script)
+	@ld -n -T $(linker_script) -o $(kernel) \
+		$(assembly_object_files) $(crabos)
 
 # compile assembly files
 build/arch/$(arch)/%.o: src/arch/$(arch)/%.asm
 	@mkdir -p $(shell dirname $@)
 	@nasm -felf64 $< -o $@
+
+kernel:
+	@RUST_TARGET_PATH=$(shell pwd) cargo build --target $(target)
