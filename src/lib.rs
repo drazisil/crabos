@@ -1,5 +1,8 @@
 #![no_std]
 #![no_main]
+#![feature(abi_x86_interrupt)]
+
+pub mod interrupts;
 
 use core::panic::PanicInfo;
 
@@ -12,18 +15,28 @@ mod vga_buffer;
 
 use crate::vga_buffer::WRITER;
 
+pub fn init() {
+    interrupts::init_idt();
+}
 
 #[no_mangle]
-pub extern "C" fn _start() {
-    cls!();
+pub extern "C" fn _start() -> ! {
+
+    vga_buffer::clear_screen();
     println!("Hello World{}", "!");
 
-    // loop {}
+    // init();
+
+    hlt_loop()
+}
+
+pub fn hlt_loop() -> ! {
+    loop {
+        x86_64::instructions::hlt();
+    }
 }
 
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
-    loop {
-
-    }
+    hlt_loop()
 }

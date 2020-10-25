@@ -153,6 +153,12 @@ macro_rules! cls {
     () => (WRITER.lock().clear_screen());
 }
 
+pub fn clear_screen() {
+    for _ in 0..BUFFER_HEIGHT {
+        println!();
+    }
+}
+
 #[doc(hidden)]
 pub fn _print(args: fmt::Arguments) {
     use core::fmt::Write;
