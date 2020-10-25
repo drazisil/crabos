@@ -22,13 +22,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb992ba9-ff27-4d20-a37a-69afbbec963e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/asm/helloworld.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/arch/x86_64/boot.asm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/arch/x86_64/grub.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/arch/x86_64/linker.ld" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/arch/x86_64/multiboot_header.asm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/arch/x86_64/long_mode_init.asm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/arch/x86_64/boot.asm" beforeDir="false" afterPath="$PROJECT_DIR$/src/arch/x86_64/boot.asm" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +75,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="3bbz8a1n" />
@@ -176,7 +174,7 @@
       <workItem from="1602380624239" duration="2908000" />
       <workItem from="1602441412089" duration="599000" />
       <workItem from="1603555456135" duration="27000" />
-      <workItem from="1603555494758" duration="11818000" />
+      <workItem from="1603555494758" duration="13723000" />
     </task>
     <task id="LOCAL-00001" summary="It works!">
       <created>1602353932271</created>
@@ -255,7 +253,21 @@
       <option name="project" value="LOCAL" />
       <updated>1603556470151</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="It's the end of the world as we know it">
+      <created>1603593776941</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1603593776941</updated>
+    </task>
+    <task id="LOCAL-00013" summary="It's the end of the world as we know it">
+      <created>1603593891033</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1603593891033</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +296,8 @@
     <MESSAGE value="Change branch name to main" />
     <MESSAGE value="Update" />
     <MESSAGE value="A new hope" />
-    <option name="LAST_COMMIT_MESSAGE" value="A new hope" />
+    <MESSAGE value="It's the end of the world as we know it" />
+    <option name="LAST_COMMIT_MESSAGE" value="It's the end of the world as we know it" />
   </component>
   <component name="WindowStateProjectService">
     <state x="286" y="137" width="1084" height="708" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603556001847">
@@ -317,15 +330,19 @@
     </state>
     <state width="1354" height="203" key="GridCell.Tab.0.right/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602441344183" />
     <state width="773" height="258" key="GridCell.Tab.0.right/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1603592897659" />
+    <state x="726" y="233" width="392" height="623" key="RollbackChangesDialog" timestamp="1603593817683">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="726" y="233" width="392" height="623" key="RollbackChangesDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1603593817683" />
     <state x="289" y="98" width="1022" height="737" key="SettingsEditor" timestamp="1602351630449">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
     <state x="289" y="98" width="1022" height="737" key="SettingsEditor/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602351630449" />
-    <state x="474" y="234" width="800" height="564" key="Vcs.Push.Dialog.v2" timestamp="1603556472066">
+    <state x="474" y="234" width="800" height="564" key="Vcs.Push.Dialog.v2" timestamp="1603593895918">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="395" y="199" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1600.873/1600.0.1440.900@0.27.1600.873" timestamp="1602422771477" />
-    <state x="474" y="234" width="800" height="564" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1603556472066" />
+    <state x="474" y="234" width="800" height="564" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1603593895918" />
     <state x="596" y="362" width="397" height="210" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1602422613772">
       <screen x="0" y="27" width="1600" height="873" />
     </state>
