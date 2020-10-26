@@ -1,6 +1,7 @@
 #![no_std]
 #![no_main]
 #![feature(abi_x86_interrupt)]
+#![feature(lang_items)]
 
 pub mod interrupts;
 
@@ -15,8 +16,12 @@ mod vga_buffer;
 
 use crate::vga_buffer::WRITER;
 
+pub mod gdt;
+
 pub fn init() {
+    gdt::init();
     interrupts::init_idt();
+    unsafe { interrupts::PICS.lock().initialize() }; // new
 }
 
 #[no_mangle]
@@ -37,10 +42,17 @@ pub extern "C" fn _start(multiboot_information_address: usize) -> ! {
 
     init();
 
-    // trigger a page fault
-    unsafe {
-        *(0xdeadbeef as *mut u64) = 42;
-    };
+    fn stack_overflow() {
+        stack_overflow(); // for each recursion, the return address is pushed
+    }
+
+    // trigger a stack overflow
+    // stack_overflow();
+
+    // // trigger a page fault
+    // unsafe {
+    //     *(0xdeadbeef as *mut u64) = 42;
+    // };
 
     hlt_loop()
 }
@@ -53,5 +65,7 @@ pub fn hlt_loop() -> ! {
 
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
+    println!("PANIC: {}", _info);
     hlt_loop()
 }
+

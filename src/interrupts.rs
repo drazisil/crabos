@@ -3,6 +3,14 @@ use lazy_static::lazy_static;
 use x86_64::structures::idt::{InterruptDescriptorTable, InterruptStackFrame};
 use x86_64::structures::idt::PageFaultErrorCode;
 use crate::hlt_loop;
+use pic8259_simple::ChainedPics;
+use spin;
+
+pub const PIC_1_OFFSET: u8 = 32;
+pub const PIC_2_OFFSET: u8 = PIC_1_OFFSET + 8;
+
+pub static PICS: spin::Mutex<ChainedPics> =
+    spin::Mutex::new(unsafe { ChainedPics::new(PIC_1_OFFSET, PIC_2_OFFSET) });
 
 extern "x86-interrupt" fn breakpoint_handler(stack_frame: &mut InterruptStackFrame) {
     println!("EXCEPTION: BREAKPOINT\n{:#?}", stack_frame);
