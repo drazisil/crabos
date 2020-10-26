@@ -28,6 +28,16 @@ $(iso): $(kernel) $(grub_cfg)
 	@cp $(grub_cfg) build/isofiles/boot/grub
 	@grub-mkrescue -o $(iso) build/isofiles
 	@rm -r build/isofiles
+	@if grub-file --is-x86-multiboot $(kernel); then \
+	  echo multiboot confirmed; \
+	else \
+	  echo the file is not multiboot; \
+	fi
+	@if grub-file --is-x86-multiboot2 $(kernel); then \
+	  echo multiboot2 confirmed; \
+	else \
+	  echo the file is not multiboot2; \
+	fi
 
 $(kernel): kernel $(crabos) $(assembly_object_files) $(linker_script)
 	@ld -n -T $(linker_script) -o $(kernel) \
