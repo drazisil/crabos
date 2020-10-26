@@ -18,3 +18,4 @@
 * https://www.gnu.org/software/make/manual/html_node/index.html
 * http://pages.cs.wisc.edu/%7Eremzi/OSTEP/
 * https://littleosbook.github.io/
+* http://www.randomhacks.net/bare-metal-rust/
