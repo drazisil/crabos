@@ -1,71 +1,109 @@
 #![no_std]
-#![cfg_attr(test, no_main)]
-#![feature(custom_test_frameworks)]
-#![test_runner(crate::test_runner)]
-#![reexport_test_harness_main = "test_main"]
+#![no_main]
+#![feature(abi_x86_interrupt)]
+#![feature(lang_items)]
 
+pub mod interrupts;
+
+use core::panic::PanicInfo;
+
+// Since this is a library, we need to import the lazy_static macro here
 #[macro_use(lazy_static)]
 extern crate lazy_static;
 
-pub mod serial;
-pub mod vga_buffer;
+// Import the vga_buffer file
+mod vga_buffer;
 
-pub fn test_panic_handler(info: &PanicInfo) -> ! {
-    serial_println!("[failed]\n");
-    serial_println!("Error: {}\n", info);
-    exit_qemu(QemuExitCode::Failed);
-    loop {}
+use crate::vga_buffer::WRITER;
+
+pub mod gdt;
+
+pub mod memory;
+
+pub fn init() {
+    gdt::init();
+    interrupts::init_idt();
+    unsafe { interrupts::PICS.lock().initialize() }; // new
 }
 
-pub fn test_runner(tests: &[&dyn Testable]) {
-    serial_println!("Running {} tests", tests.len());
-    for test in tests {
-        test.run();
-    }
-    exit_qemu(QemuExitCode::Success);
-}
-
-pub trait Testable {
-    fn run(&self) -> ();
-}
-
-impl<T> Testable for T
-    where
-        T: Fn(),
-{
-    fn run(&self) {
-        serial_print!("{}...\t", core::any::type_name::<T>());
-        self();
-        serial_println!("[ok]");
-    }
-}
-
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
-#[repr(u32)]
-pub enum QemuExitCode {
-    Success = 0x10,
-    Failed = 0x11,
-}
-
-pub fn exit_qemu(exit_code: QemuExitCode) {
-    use x86_64::instructions::port::Port;
-
-    unsafe {
-        let mut port = Port::new(0xf4);
-        port.write(exit_code as u32);
-    }
-}
-use core::panic::PanicInfo;
-
-#[cfg(test)]
-#[panic_handler]
-fn panic(info: &PanicInfo) -> ! {
-    test_panic_handler(info)
-}
-
-#[cfg(test)]
 #[no_mangle]
-pub extern "C" fn _start() -> ! {
-    test_main();
-    loop {}
+pub extern "C" fn _start(multiboot_information_address: usize) -> ! {
+
+    use memory::FrameAllocator;
+
+    vga_buffer::clear_screen();
+    println!("Hello World{}", "!");
+
+    let boot_info = unsafe{ multiboot2::load(multiboot_information_address) };
+    let memory_map_tag = boot_info.memory_map_tag()
+        .expect("Memory map tag required");
+
+    println!("memory areas:");
+    for area in memory_map_tag.memory_areas() {
+        println!("    start: 0x{:x}, length: 0x{:x}",
+                 area.base_addr, area.length);
+    }
+
+    let elf_sections_tag = boot_info.elf_sections_tag()
+        .expect("Elf-sections tag required");
+
+    println!("kernel sections:");
+    for section in elf_sections_tag.sections() {
+        println!("    addr: 0x{:x}, size: 0x{:x}, flags: 0x{:x}",
+                 section.addr, section.size, section.flags);
+    }
+
+    let kernel_start = elf_sections_tag.sections().map(|s| s.addr)
+        .min().unwrap();
+
+    let kernel_end = elf_sections_tag.sections().map(|s| s.addr + s.size)
+        .max().unwrap();
+
+    let multiboot_start = multiboot_information_address;
+    let multiboot_end = multiboot_start + (boot_info.total_size as usize);
+
+    println!("kernel_start: {}, kernel_end: {}", kernel_start, kernel_end);
+
+    println!("multiboot_start: {}, multiboot_end: {}", multiboot_start, multiboot_end);
+
+    let mut frame_allocator = memory::AreaFrameAllocator::new(
+        kernel_start as usize, kernel_end as usize, multiboot_start,
+        multiboot_end, memory_map_tag.memory_areas());
+
+    for i in 0.. {
+        if let None = frame_allocator.allocate_frame() {
+            println!("allocated {} frames", i);
+            break;
+        }
+    }
+
+
+    init();
+
+    fn stack_overflow() {
+        stack_overflow(); // for each recursion, the return address is pushed
+    }
+
+    // trigger a stack overflow
+    // stack_overflow();
+
+    // // trigger a page fault
+    // unsafe {
+    //     *(0xdeadbeef as *mut u64) = 42;
+    // };
+
+    hlt_loop()
 }
+
+pub fn hlt_loop() -> ! {
+    loop {
+        x86_64::instructions::hlt();
+    }
+}
+
+#[panic_handler]
+fn panic(_info: &PanicInfo) -> ! {
+    println!("PANIC: {}", _info);
+    hlt_loop()
+}
+

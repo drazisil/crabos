@@ -87,6 +87,12 @@ impl Writer {
         }
     }
 
+    pub fn clear_screen(&mut self) {
+        for row in 0..BUFFER_HEIGHT {
+            self.clear_row(row);
+        }
+    }
+
     fn new_line(&mut self) {
         for row in 1..BUFFER_HEIGHT {
             for col in 0..BUFFER_WIDTH {
@@ -107,6 +113,7 @@ impl Writer {
             self.buffer.chars[row][col].write(blank);
         }
     }
+
 }
 
 use core::fmt;
@@ -139,6 +146,17 @@ macro_rules! print {
 macro_rules! println {
     () => ($crate::print!("\n"));
     ($($arg:tt)*) => ($crate::print!("{}\n", format_args!($($arg)*)));
+}
+
+#[macro_export]
+macro_rules! cls {
+    () => (WRITER.lock().clear_screen());
+}
+
+pub fn clear_screen() {
+    for _ in 0..BUFFER_HEIGHT {
+        println!();
+    }
 }
 
 #[doc(hidden)]
