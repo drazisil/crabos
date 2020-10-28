@@ -49,4 +49,4 @@ build/arch/$(arch)/%.o: src/arch/$(arch)/%.asm
 	@nasm -felf64 $< -o $@
 
 kernel:
-	@RUST_TARGET_PATH=$(shell pwd) cargo build --target $(target)
+	@RUST_TARGET_PATH=$(shell pwd) cargo +nightly build
