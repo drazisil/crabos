@@ -1,5 +1,4 @@
 #![no_std]
-#![no_main]
 #![feature(abi_x86_interrupt)]
 #![feature(lang_items)]
 
@@ -13,8 +12,6 @@ extern crate lazy_static;
 
 // Import the vga_buffer file
 mod vga_buffer;
-
-use crate::vga_buffer::WRITER;
 
 pub mod gdt;
 
@@ -79,18 +76,6 @@ pub extern "C" fn _start(multiboot_information_address: usize) -> ! {
 
 
     init();
-
-    fn stack_overflow() {
-        stack_overflow(); // for each recursion, the return address is pushed
-    }
-
-    // trigger a stack overflow
-    // stack_overflow();
-
-    // // trigger a page fault
-    // unsafe {
-    //     *(0xdeadbeef as *mut u64) = 42;
-    // };
 
     hlt_loop()
 }
