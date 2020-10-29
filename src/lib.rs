@@ -18,16 +18,22 @@ pub mod gdt;
 
 pub mod memory;
 
+pub mod serial;
+
 mod sysinfo;
 
 pub fn init() {
     gdt::init();
     interrupts::init_idt();
     unsafe { interrupts::PICS.lock().initialize() }; // new
+    kinfo!("Interrupts enabled? {}", x86_64::instructions::interrupts::are_enabled());
+    // x86_64::instructions::interrupts::enable();
 }
 
 #[no_mangle]
 pub extern "C" fn _start(multiboot_information_address: usize) -> ! {
+
+    kerror!("You can't do that!");
 
     vga_buffer::clear_screen();
     println!("Hello World{}", "!");
