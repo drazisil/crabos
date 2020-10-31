@@ -48,3 +48,11 @@ macro_rules! kinfo {
     ($fmt:expr, $($arg:tt)*) => ($crate::serial_print!(
         concat!("KERNEL INFO: ", $fmt, "\n"), $($arg)*));
 }
+
+#[macro_export]
+macro_rules! kdebug {
+    () => ($crate::serial_print!("\n"));
+    ($fmt:expr) => ($crate::serial_print!(concat!("KERNEL DEBUG: ", $fmt, "\n")));
+    ($fmt:expr, $($arg:tt)*) => ($crate::serial_print!(
+        concat!("KERNEL DEBUG: ", $fmt, "\n"), $($arg)*));
+}

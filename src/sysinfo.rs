@@ -46,3 +46,39 @@ pub fn dump_sysinfo(multiboot_information_address: usize) {
         }
     }
 }
+
+pub struct CpuInfo {
+    pub eax: u32,
+    pub ebx: u32,
+    pub ecx: u32,
+    pub edx: u32
+}
+
+pub fn cpu_features() -> CpuInfo {
+    let eax: u32;
+    let ebx: u32;
+    let ecx: u32;
+    let edx: u32;
+    unsafe {
+        asm! (
+            "mov eax, 0x1",
+            "cpuid",
+            out("eax") eax,
+            out("ebx") ebx,
+            out("ecx") ecx,
+            out("edx") edx,
+        );
+    }
+    return CpuInfo {
+        eax,
+        ebx,
+        ecx,
+        edx,
+    };
+}
+
+
+
+pub fn check_onboard_apic() -> bool {
+    return (cpu_features().edx & 512) == 512;
+}

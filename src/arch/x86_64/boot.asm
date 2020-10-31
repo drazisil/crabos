@@ -4,6 +4,9 @@ extern long_mode_start
 section .text
 bits 32
 start:
+    ; Initial state
+    ; CR0 is 60000010H - Real mode, paging disabled
+
     mov esp, stack_top
     mov edi, ebx ; Move Multiboot info pointer to edi
 
@@ -139,7 +142,7 @@ enable_paging:
     ; enable paging in the cr0 register
     mov eax, cr0
     or eax, 1 << 31
-    mov cr0, eax
+    mov cr0, eax ; Switch mode to long (IA-32e)
 
     ret
 
