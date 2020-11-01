@@ -17,7 +17,7 @@ use core::panic::PanicInfo;
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
     println!("{}", info);
-    loop {}
+    crabos::hlt_loop();
 }
 
 // our panic handler in test mode
@@ -40,8 +40,13 @@ pub extern "C" fn _start() -> ! {
     #[cfg(test)]
     test_main();
 
+    loop {
+        for _ in 0..10000 {}
+        print!("-");        
+    }
+
     println!("It did not crash!");
-    loop {}
+    crabos::hlt_loop();
 }
 
 #[test_case]
