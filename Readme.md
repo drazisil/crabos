@@ -19,3 +19,4 @@
 * http://pages.cs.wisc.edu/%7Eremzi/OSTEP/
 * https://littleosbook.github.io/
 * http://www.randomhacks.net/bare-metal-rust/
+* https://michael-f-bryan.github.io/rust-ffi-guide/dynamic_loading.html
