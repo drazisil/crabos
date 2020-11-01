@@ -1,3 +1,9 @@
+use core::fmt;
+use volatile::Volatile;
+use spin::Mutex;
+use core::fmt::Write;
+use lazy_static::lazy_static;
+
 #[allow(dead_code)]
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 #[repr(u8)]
@@ -40,7 +46,7 @@ struct ScreenChar {
 const BUFFER_HEIGHT: usize = 25;
 const BUFFER_WIDTH: usize = 80;
 
-use volatile::Volatile;
+
 
 #[repr(transparent)]
 struct Buffer {
@@ -110,8 +116,6 @@ impl Writer {
 
 }
 
-use core::fmt;
-
 impl fmt::Write for Writer {
     fn write_str(&mut self, s: &str) -> fmt::Result {
         self.write_string(s);
@@ -119,7 +123,7 @@ impl fmt::Write for Writer {
     }
 }
 
-use spin::Mutex;
+
 
 
 
@@ -155,9 +159,28 @@ pub fn clear_screen() {
 
 #[doc(hidden)]
 pub fn _print(args: fmt::Arguments) {
-    use core::fmt::Write;
-    use x86_64::instructions::interrupts; 
-    interrupts::without_interrupts(|| { 
-        WRITER.lock().write_fmt(args).unwrap();
-    });
+
+    WRITER.lock().write_fmt(args).unwrap();
+}
+
+#[test_case]
+fn test_println_simple() {
+    println!("test_println_simple output");
+}
+
+#[test_case]
+fn test_println_many() {
+    for _ in 0..200 {
+        println!("test_println_many output");
+    }
+}
+
+#[test_case]
+fn test_println_output() {
+    let s = "Some test string that fits on a single line";
+    println!("{}", s);
+    for (i, c) in s.chars().enumerate() {
+        let screen_char = WRITER.lock().buffer.chars[BUFFER_HEIGHT - 2][i].read();
+        assert_eq!(char::from(screen_char.ascii_character), c);
+    }
 }

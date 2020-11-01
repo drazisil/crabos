@@ -1,96 +1,72 @@
 #![no_std]
-#![feature(abi_x86_interrupt)]
-#![feature(lang_items)]
-#![feature(asm)]
 
-pub mod interrupts;
+#![cfg_attr(test, no_main)]
+#![feature(custom_test_frameworks)]
+#![test_runner(crate::test_runner)]
+#![reexport_test_harness_main = "test_main"]
+
+pub mod serial;
+pub mod vga_buffer;
 
 use core::panic::PanicInfo;
 
-// Since this is a library, we need to import the lazy_static macro here
-#[macro_use(lazy_static)]
-extern crate lazy_static;
-
-// Import the vga_buffer file
-#[macro_use]
-pub mod vga_buffer;
-
-pub mod gdt;
-
-pub mod memory;
-
-pub mod serial;
-
-pub mod sysinfo;
-
-mod register;
-
-pub fn init() {
-    gdt::init();
-    interrupts::init_idt();
-    unsafe { interrupts::PICS.lock().initialize() }; // new
-    // interrupts::enable();
+pub trait Testable {
+    fn run(&self) -> ();
 }
 
-#[no_mangle]
-pub extern "C" fn _start(multiboot_information_address: usize) -> ! {
+impl<T> Testable for T
+where
+    T: Fn(),
+{
+    fn run(&self) {
+        serial_print!("{}...\t", core::any::type_name::<T>());
+        self();
+        serial_println!("[ok]");
+    }
+}
 
-    vga_buffer::clear_screen();
+pub fn test_runner(tests: &[&dyn Testable]) {
+    serial_println!("Running {} tests", tests.len());
+    for test in tests {
+        test.run();
+    }
+    exit_qemu(QemuExitCode::Success);
+}
 
-    // sysinfo::dump_sysinfo(multiboot_information_address);
+pub fn test_panic_handler(info: &PanicInfo) -> ! {
+    serial_println!("[failed]\n");
+    serial_println!("Error: {}\n", info);
+    exit_qemu(QemuExitCode::Failed);
+    loop {}
+}
 
-    init();
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[repr(u32)]
+pub enum QemuExitCode {
+    Success = 0x10,
+    Failed = 0x11,
+}
 
-    let eax: u32;
-    let ebx: u32;
-    let ecx: u32;
-    let edx: u32;
+pub fn exit_qemu(exit_code: QemuExitCode) {
+    use x86_64::instructions::port::Port;
+
     unsafe {
-        asm! (
-            "mov eax, 0x1",
-            "cpuid",
-            out("eax") eax,
-            out("ebx") ebx,
-            out("ecx") ecx,
-            out("edx") edx,
-        );
-    }
-
-    kdebug!("cpuid feature information");
-    kdebug!("eax is {}", eax);
-    kdebug!("ebx is {}", ebx);
-    kdebug!("ecx is {}", ecx);
-    kdebug!("edx is {}", edx);
-
-    let eflags = register::eflags();
-    
-    kdebug!("eflags: {}", eflags);
-
-    let features = sysinfo::cpu_features();
-
-    kdebug!("cpuid feature information 2");
-    kdebug!("eax is {}", features.eax);
-    kdebug!("ebx is {}", features.ebx);
-    kdebug!("ecx is {}", features.ecx);
-    kdebug!("edx is {}", features.edx);
-
-    kdebug!("onload_apic: {}", sysinfo::check_onboard_apic());
-    kdebug!("onload_apic: {}", sysinfo::check_onboard_apic()); 
-
-    println!("Hello, kernel!");
-
-    hlt_loop();
-}
-
-pub fn hlt_loop() -> ! {
-    loop {
-        x86_64::instructions::hlt();
+        let mut port = Port::new(0xf4);
+        port.write(exit_code as u32);
     }
 }
 
+/// Entry point for `cargo test`
+#[cfg(test)]
+#[no_mangle]
+pub extern "C" fn _start() -> ! {
+    test_main();
+    loop {}
+}
+
+#[cfg(test)]
 #[panic_handler]
-fn panic(_info: &PanicInfo) -> ! {
-    println!("PANIC: {}", _info);
-    hlt_loop()
+fn panic(info: &PanicInfo) -> ! {
+    test_panic_handler(info)
 }
 

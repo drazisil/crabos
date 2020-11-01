@@ -1,5 +1,8 @@
+// in tests/basic_boot.rs
+
 #![no_std]
 #![no_main]
+
 #![feature(custom_test_frameworks)]
 #![test_runner(crabos::test_runner)]
 #![reexport_test_harness_main = "test_main"]
@@ -13,6 +16,7 @@ pub extern "C" fn _start() -> ! {
 
     loop {}
 }
+
 
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
