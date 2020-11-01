@@ -1,14 +1,23 @@
 #![no_std]
 
 #![cfg_attr(test, no_main)]
+
+#![feature(asm)]
+#![feature(abi_x86_interrupt)]
+
 #![feature(custom_test_frameworks)]
 #![test_runner(crate::test_runner)]
 #![reexport_test_harness_main = "test_main"]
 
 pub mod serial;
 pub mod vga_buffer;
+mod interrupts;
 
 use core::panic::PanicInfo;
+
+pub fn init() {
+    interrupts::init_idt();
+}
 
 pub trait Testable {
     fn run(&self) -> ();
@@ -60,6 +69,7 @@ pub fn exit_qemu(exit_code: QemuExitCode) {
 #[cfg(test)]
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
+    init();
     test_main();
     loop {}
 }
