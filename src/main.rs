@@ -40,11 +40,6 @@ pub extern "C" fn _start() -> ! {
     #[cfg(test)]
     test_main();
 
-    loop {
-        for _ in 0..10000 {}
-        print!("-");        
-    }
-
     println!("It did not crash!");
     crabos::hlt_loop();
 }
