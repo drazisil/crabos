@@ -1,6 +1,11 @@
 use x86_64::VirtAddr;
 use x86_64::structures::tss::TaskStateSegment;
 use lazy_static::lazy_static;
+use x86_64::structures::gdt::{
+    GlobalDescriptorTable, Descriptor, 
+    SegmentSelector
+};
+
 
 pub const DOUBLE_FAULT_IST_INDEX: u16 = 0;
 
@@ -18,10 +23,6 @@ lazy_static! {
         tss
     };
 }
-
-use x86_64::structures::gdt::{GlobalDescriptorTable, Descriptor};
-
-use x86_64::structures::gdt::SegmentSelector;
 
 lazy_static! {
     static ref GDT: (GlobalDescriptorTable, Selectors) = {
