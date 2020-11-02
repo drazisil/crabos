@@ -22,6 +22,7 @@ use core::panic::PanicInfo;
 
 extern crate alloc;
 pub mod allocator;
+pub mod task;
 
 #[cfg(test)]
 use bootloader::{entry_point, BootInfo};
