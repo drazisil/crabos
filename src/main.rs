@@ -14,10 +14,13 @@ use core::panic::PanicInfo;
 
 use bootloader::{BootInfo, entry_point};
 
-use crabos::task::{Task, simple_executor::SimpleExecutor};
+use crabos::task::Task;
+use crabos::task::executor::Executor;
 
 extern crate alloc;
 use alloc::{boxed::Box, vec, vec::Vec, rc::Rc};
+
+use crabos::task::keyboard;
 
 entry_point!(kernel_main);
 
@@ -73,8 +76,9 @@ pub fn kernel_main(boot_info: &'static BootInfo) -> ! {
     core::mem::drop(reference_counted);
     println!("reference count is {} now", Rc::strong_count(&cloned_reference));
 
-    let mut executor = SimpleExecutor::new();
+    let mut executor = Executor::new();
     executor.spawn(Task::new(example_task()));
+    executor.spawn(Task::new(keyboard::print_keypresses()));
     executor.run();
  
     #[cfg(test)]

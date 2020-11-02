@@ -124,10 +124,6 @@ impl fmt::Write for Writer {
     }
 }
 
-
-
-
-
 lazy_static! {
     pub static ref WRITER: Mutex<Writer> = Mutex::new(Writer {
         column_position: 0,
