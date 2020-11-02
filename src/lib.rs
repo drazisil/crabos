@@ -4,6 +4,7 @@
 
 #![feature(asm)]
 #![feature(abi_x86_interrupt)]
+#![feature(alloc_error_handler)]
 
 #![feature(custom_test_frameworks)]
 #![test_runner(crate::test_runner)]
@@ -16,6 +17,9 @@ pub mod memory;
 mod interrupts;
 
 use core::panic::PanicInfo;
+
+extern crate alloc;
+pub mod allocator;
 
 #[cfg(test)]
 use bootloader::{entry_point, BootInfo};
@@ -94,5 +98,10 @@ pub fn hlt_loop() -> ! {
     loop {
         x86_64::instructions::hlt();
     }
+}
+
+#[alloc_error_handler]
+fn alloc_error_handler(layout: alloc::alloc::Layout) -> ! {
+    panic!("allocation error: {:?}", layout)
 }
 
