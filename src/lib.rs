@@ -5,6 +5,7 @@
 #![feature(asm)]
 #![feature(abi_x86_interrupt)]
 #![feature(alloc_error_handler)]
+#![feature(const_mut_refs)]
 
 #![feature(custom_test_frameworks)]
 #![test_runner(crate::test_runner)]
