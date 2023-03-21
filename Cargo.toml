@@ -14,7 +14,7 @@ multiboot2 = "0.15.1"
 pic8259_simple = "0.2.0"
 spin = "0.9.6"
 uart_16550 = "0.2.18"
-volatile = "0.4.5"
+volatile = "0.4.6"
 x86_64 = "0.14.10"
 
 [dependencies.lazy_static]
