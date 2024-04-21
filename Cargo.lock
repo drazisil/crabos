@@ -41,7 +41,7 @@ dependencies = [
  "pic8259_simple",
  "spin 0.9.8",
  "uart_16550",
- "volatile 0.5.2",
+ "volatile 0.5.3",
  "x86_64",
 ]
 
@@ -232,9 +232,9 @@ checksum = "442887c63f2c839b346c192d047a7c87e73d0689c9157b00b53dcc27dd5ea793"
 
 [[package]]
 name = "volatile"
-version = "0.5.2"
+version = "0.5.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b214e6480cbaa16049d2f256268b51732a8d1e5507ac56392990604c7c71d936"
+checksum = "ef15f694bca7c21d52e98cff4f933d4e82b4cc1ed05ec8da0ee750002641c88e"
 
 [[package]]
 name = "x86"
