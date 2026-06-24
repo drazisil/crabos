@@ -46,6 +46,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "elf"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "55dd888a213fc57e957abf2aa305ee3e8a28dbe05687a251f33b637cd46b0070"
+
+[[package]]
 name = "lazy_static"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -74,11 +80,12 @@ dependencies = [
 
 [[package]]
 name = "multiboot2"
-version = "0.24.1"
+version = "0.25.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "89797c447846ff7c39eebf22b1c6ce1c6d8721d0dced9771fc142d10cc2a4e97"
+checksum = "5bc18f6267e4dc947f0f95c4148656a0687a2688fefadcde56c27caa474da511"
 dependencies = [
  "bitflags",
+ "elf",
  "log",
  "multiboot2-common",
  "ptr_meta",
@@ -88,9 +95,9 @@ dependencies = [
 
 [[package]]
 name = "multiboot2-common"
-version = "0.3.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6892f2795001adb0f6e4c124de90b68f9edc4bf52b8d81b14dac45cb361f1cca"
+checksum = "cb473e539229614e212f22ee3a55b8c8741d1144e8e8aa8fd044bc37f7ea4e18"
 dependencies = [
  "ptr_meta",
  "thiserror",
@@ -212,9 +219,9 @@ dependencies = [
 
 [[package]]
 name = "uefi-raw"
-version = "0.12.0"
+version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8aff2f4f2b556a36a201d335a1e0a57754967a96857b1f47a52d5a23825cac84"
+checksum = "f3775e5934877acaef4b00f254f252df1e2266903c31e51455c117f4f2824eda"
 dependencies = [
  "bitflags",
  "uguid",
